@@ -54,9 +54,24 @@ They are the main methods, responsible for returning the calculations for the gi
 
 [Here we have more information about the metric input](./metric-input.md). 
 
+#### Override Filters for each value
+
+Summaries, TimePoints, and other objects contain 2 attributes relevant to understand which items (commits, tickets,...) are used in the calculation.
+
+- `countItems`: tells us how many items are used to calculate the value
+- `overrideFilters`: the [`overrideFilters`](./metric-input.md#overridefilters) to be used in the [Details method](#details-methods) in order to return the list of items used in the calculation of the value
+
+The `overrideFilters` of the `generalSummary` will be an empty object, since we don't need to apply an extra layer of filtering to get the global value.
+
+Each summary of a breakdown will have a filter in the `overrideFilters`, for example if we are breaking down by each issue type, it will have an overrideFilters with everything blank with the exception of the `multiFilter` with the key of the issue type [FilterConfig](./metric-config.md) and the values an array with the issue type for this summary.
+
+A TimePoint in a time series will have an overrideFilters with everything blank with the exception of the `dateRange` with the time range covered by the time point.
+
 ### Details methods
 
 They will return the different items that are taken 
+
+The input should be the same as the input of the [metric query](#metric-methods), using the [overrideFilters of the value](#override-filters-for-each-value)
 
 ```graphql
 query($input: CommitsMetricDetailInput!) {

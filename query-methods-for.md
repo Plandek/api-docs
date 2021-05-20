@@ -160,7 +160,7 @@ example of response
 
 ### `Facets` methods
 
-They will return the potential 
+They will return the potential filters for a given metric. You can see more information about filters in the [Metric Input page](./metric-input.md).
 
 ```graphql
 query($input: CommitsMetricFacetsInput!) {

@@ -9,4 +9,5 @@ It is a [GraphQL API](https://graphql.org/), which uses JWT tokens for [authenti
 3. [Help with querying metrics](./query-methods-for.md)
 4. [Help with Metric Input](./metric-input.md)
 5. [Help with Metric Config](./metric-config.md)
-4. [Query examples with Fragments](./graphql)
+6. [Help with Sprints](./available-sprints.md)
+7. [Query examples with Fragments](./graphql)

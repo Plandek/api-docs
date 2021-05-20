@@ -43,7 +43,7 @@ Modelled in the enum `SprintDateRangeField` in the GraphQL schema.
 
 ## `filters`
 
-This is the object that determines which 
+This is the object that determines which items will be taken into account in the calculation.
 
 ### `clientKey`
 

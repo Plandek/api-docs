@@ -1,0 +1,24 @@
+query($clientKey: KeyString!, $dataSetKey: KeyString!, $metricKey: MetricKey!) {
+  metricConfig(
+    clientKey: $clientKey
+    dataSetKey: $dataSetKey
+    metricKey: $metricKey
+  ) {
+    enabled
+    metricKey
+
+    facetConfigs {
+      key
+      label
+      valueType
+      filterType
+    }
+
+    breakdownConfigs {
+      key
+      label
+      valueType
+      filterType
+    }
+  }
+}

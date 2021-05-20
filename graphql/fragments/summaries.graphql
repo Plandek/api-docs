@@ -1,0 +1,137 @@
+
+fragment SprintCompletionSummaryForGeneric on SprintCompletionSummary {
+  id
+  key
+  label
+  sprintKeys
+
+  startDate
+  endDate
+
+  ticketValue
+  value
+  total {
+    ...SprintCompletionSummaryResult
+  }
+  completed {
+    ...SprintCompletionSummaryResult
+  }
+
+  descoped {
+    ...SprintCompletionSummaryResult
+  }
+
+  incomplete {
+    ...SprintCompletionSummaryResult
+  }
+
+  removed {
+    ...SprintCompletionSummaryResult
+  }
+}
+
+fragment SprintCompletionSummaryResult on SprintCompletionSummaryResult {
+  tickets
+  value
+  countItems
+  overrideFilters {
+    ...OverrideFilters
+  }
+}
+
+fragment PersonRelationshipSummaryForGeneric on PersonRelationshipSummary {
+  key
+  label
+  value
+}
+
+fragment NumberStatusSummaryForGeneric on NumberStatusSummary {
+  key
+  label
+  value
+  status {
+    statusKey
+    label
+  }
+}
+
+fragment TicketsScopeNumberSummary on TicketsScopeNumberSummary {
+  key
+  label
+  value
+  countItems
+  overrideFilters {
+    ...OverrideFilters
+  }
+}
+
+fragment NumberSprintSummaryForGeneric on NumberSprintSummary {
+  key
+  label
+  sum
+  teamSize
+  value
+  sprint {
+    sprintKey
+    sprintLabel
+  }
+}
+
+fragment NumberSummaryForGeneric on NumberSummary {
+  key
+  label
+  value
+}
+
+fragment PercentageSummaryForGeneric on PercentageSummary {
+  key
+  label
+  value
+}
+
+fragment AverageNumberSummaryForGeneric on AverageNumberSummary {
+  key
+  label
+  value
+  numerator
+  countItems
+}
+
+fragment StatusSummaryForGeneric on StatusSummary {
+  key
+  label
+  value
+  numerator
+  countItems
+  status {
+    statusKey
+    label
+  }
+}
+
+fragment StatusBucketSummaryForGeneric on StatusBucketSummary {
+  key
+  label
+  value
+  numerator
+  countItems
+  position
+}
+
+fragment StatusBucketPercentageSummaryForGeneric on StatusBucketPercentageSummary {
+  key
+  label
+  value
+}
+
+fragment PRStatusSummary on PRStatusSummary {
+  key
+  label
+  status {
+    statusKey
+    label
+  }
+  value
+  numerator
+  countItems
+}

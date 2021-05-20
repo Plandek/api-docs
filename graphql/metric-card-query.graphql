@@ -1,0 +1,24 @@
+query MetricCard(
+  $clientKey: KeyString!
+  $dataSetKey: KeyString!
+  $dashboardKey: KeyString!
+  $cardKey: KeyString!
+  $input: GenericMetricInputMin!
+) {
+  metricCard(clientKey: $clientKey, dataSetKey: $dataSetKey, dashboardKey: $dashboardKey, cardKey: $cardKey) {
+    ... on MetricCard {
+      cardKey
+      position
+      primary: primaryMetricDataConfig {
+        response(input: $input) {
+          ...GenericMetricResponse
+        }
+      }
+      overlayMetrics: overlayMetricDataConfigs {
+        response(input: $input) {
+          ...GenericMetricResponse
+        }
+      }
+    }
+  }
+}

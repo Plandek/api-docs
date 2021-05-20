@@ -1,0 +1,28 @@
+query MetricDashboard(
+  $clientKey: KeyString!
+  $dataSetKey: KeyString!
+  $dashboardKey: KeyString!
+  $input: GenericMetricInputMin!
+) {
+  metricDashboard(clientKey: $clientKey, dataSetKey: $dataSetKey, dashboardKey: $dashboardKey) {
+    id
+    cardList {
+      cards {
+        ... on MetricCard {
+          cardKey
+          position
+          primary: primaryMetricDataConfig {
+            response(input: $input) {
+              ...GenericMetricResponse
+            }
+          }
+          overlayMetrics: overlayMetricDataConfigs {
+            response(input: $input) {
+              ...GenericMetricResponse
+            }
+          }
+        }
+      }
+    }
+  }
+}

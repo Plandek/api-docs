@@ -1,0 +1,33 @@
+# to be used as part of the `overrideFilters` of each summary, time point, etc.
+fragment OverrideFilters on OverrideFilters {
+  sprintKey
+  pastSprintKey
+  dataSetKey
+  entitySetRefinement {
+    boardsKeySet
+    ciPipelinesKeySet
+    monitoredServicesKeySet
+    peopleKeySet
+    repositoriesKeySet
+  }
+  multiFilters {
+    key
+    values
+  }
+  boolFilters {
+    key
+    value
+  }
+  rangeFilters {
+    key
+    from
+    to
+  }
+  scatterMetricInput {
+    value
+  }
+  dateRange {
+    from
+    to
+  }
+}

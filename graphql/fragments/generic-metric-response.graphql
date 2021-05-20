@@ -1,0 +1,283 @@
+fragment GenericMetricResponse on GenericMetricResponse {
+  id
+  genericMetricResponseType
+  metricKey
+
+  ciMetric {
+    ...CiMetricResponseForGeneric
+  }
+  codeCycleTime {
+    ...CodeCycleTimeResponseForGeneric
+  }
+  codeCycleTimeByStatus {
+    ...CodeCycleTimeByStatusResponseForGeneric
+  }
+  codeKnowledgeMetric {
+    ...CodeKnowledgeMetricResponseForGeneric
+  }
+  commitPercentageMetric {
+    ...CommitPercentageMetricResponseForGeneric
+  }
+  commitsMetric {
+    ...CommitsMetricResponseForGeneric
+  }
+  deliveryTimeByStatusBucket {
+    ...DeliveryTimeByStatusBucketResponseForGeneric
+  }
+  deliveryTimeByStatus {
+    ...DeliveryTimeByStatusResponseForGeneric
+  }
+  deliveryTime {
+    ...DeliveryTimeResponseForGeneric
+  }
+  firstTimeYieldRateMetric {
+    ...FirstTimeYieldRateMetricResponseForGeneric
+  }
+  firstTimeYieldTicketsMetric {
+    ...FirstTimeYieldTicketsMetricResponseForGeneric
+  }
+  flowEfficiencyByStatusBucket {
+    ...FlowEfficiencyByStatusBucketResponseForGeneric
+  }
+  flowEfficiency {
+    ...FlowEfficiencyResponseForGeneric
+  }
+  pipelinesMetric {
+    ...PipelinesMetricResponseForGeneric
+  }
+  pullRequestsMetric {
+    ...PullRequestsMetricResponseForGeneric
+  }
+  returnRateMetric {
+    ...ReturnRateMetricResponseForGeneric
+  }
+  returnTicketsMetric {
+    ...ReturnTicketsMetricResponseForGeneric
+  }
+  speedingTicketsMetric {
+    ...SpeedingTicketsMetricResponseForGeneric
+  }
+  speedingTransitionsRateMetric {
+    ...SpeedingTransitionsRateMetricResponseForGeneric
+  }
+  sprintCompletion {
+    ...SprintCompletionResponseForGeneric
+  }
+  sprintValuePerTeamSizeMetric {
+    ...SprintValuePerTeamSizeMetricResponseForGeneric
+  }
+  ticketCommitHotspotsMetric {
+    ...TicketCommitHotspotsMetricResponseForGeneric
+  }
+  ticketsMetric {
+    ...TicketsMetricResponseForGeneric
+  }
+  ticketsScopeMetric {
+    ...TicketsScopeMetricResponseForGeneric
+  }
+  ticketsTimelineMetricStatusBucket {
+    ...TicketsTimelineMetricStatusBucketResponseForGeneric
+  }
+  ticketsTimelineMetricStatus {
+    ...TicketsTimelineMetricStatusResponseForGeneric
+  }
+  treemap {
+    ...TreemapResponseForGeneric
+  }
+  unresolvedTicketsMetric {
+    ...UnresolvedTicketsMetricResponseForGeneric
+  }
+}
+
+
+fragment CommitPercentageMetricResponseForGeneric on CommitPercentageMetricResponse {
+  summariesList {
+    ...PercentageSummaryForGeneric
+  }
+}
+
+fragment CommitsMetricResponseForGeneric on CommitsMetricResponse {
+  summariesList {
+    ...NumberSummaryForGeneric
+  }
+}
+
+fragment DeliveryTimeByStatusBucketResponseForGeneric on DeliveryTimeByStatusBucketResponse {
+  summariesList {
+    ...StatusBucketSummaryForGeneric
+  }
+}
+
+fragment DeliveryTimeByStatusResponseForGeneric on DeliveryTimeByStatusResponse {
+  id
+  summariesList {
+    ...StatusSummaryForGeneric
+  }
+}
+
+fragment DeliveryTimeResponseForGeneric on DeliveryTimeResponse {
+  summariesList {
+    ...AverageNumberSummaryForGeneric
+  }
+}
+
+fragment CodeKnowledgeMetricResponseForGeneric on CodeKnowledgeMetricResponse {
+  summariesList {
+    ...PersonRelationshipSummaryForGeneric
+  }
+}
+
+fragment CiMetricResponseForGeneric on CiMetricResponse {
+  summariesList {
+    ...NumberSummaryForGeneric
+  }
+}
+
+fragment CodeCycleTimeResponseForGeneric on CodeCycleTimeResponse {
+  summariesList {
+    ...AverageNumberSummaryForGeneric
+  }
+}
+
+fragment CodeCycleTimeByStatusResponseForGeneric on CodeCycleTimeByStatusResponse {
+  summariesList {
+    ...PRStatusSummary
+  }
+}
+
+fragment ReturnRateMetricResponseForGeneric on ReturnRateMetricResponse {
+  summariesList {
+    ...PercentageSummaryForGeneric
+  }
+}
+
+fragment FlowEfficiencyResponseForGeneric on FlowEfficiencyResponse {
+  summariesList {
+    ...PercentageSummaryForGeneric
+  }
+}
+
+fragment FlowEfficiencyByStatusBucketResponseForGeneric on FlowEfficiencyByStatusBucketResponse {
+  summariesList {
+    ...StatusBucketPercentageSummaryForGeneric
+  }
+}
+
+fragment ReturnTicketsMetricResponseForGeneric on ReturnTicketsMetricResponse {
+  summariesList {
+    ...NumberSummaryForGeneric
+  }
+}
+
+fragment FirstTimeYieldRateMetricResponseForGeneric on FirstTimeYieldRateMetricResponse {
+  summariesList {
+    ...PercentageSummaryForGeneric
+  }
+}
+
+fragment FirstTimeYieldTicketsMetricResponseForGeneric on FirstTimeYieldTicketsMetricResponse {
+  summariesList {
+    ...NumberSummaryForGeneric
+  }
+}
+
+fragment PipelinesMetricResponseForGeneric on PipelinesMetricResponse {
+  summariesList {
+    ...NumberSummaryForGeneric
+  }
+}
+
+fragment PullRequestsMetricResponseForGeneric on PullRequestsMetricResponse {
+  summariesList {
+    ...NumberSummaryForGeneric
+  }
+}
+
+fragment SpeedingTicketsMetricResponseForGeneric on SpeedingTicketsMetricResponse {
+  summariesList {
+    ...NumberSummaryForGeneric
+  }
+}
+
+fragment SpeedingTransitionsRateMetricResponseForGeneric on SpeedingTransitionsRateMetricResponse {
+  summariesList {
+    ...PercentageSummaryForGeneric
+  }
+}
+
+fragment SprintCompletionResponseForGeneric on SprintCompletionResponse {
+  summariesList {
+    ...SprintCompletionSummaryForGeneric
+  }
+}
+
+fragment SprintValuePerTeamSizeMetricResponseForGeneric on SprintValuePerTeamSizeMetricResponse {
+  summary {
+    ...NumberSummaryForGeneric
+  }
+
+  sprintSummariesList {
+    ...NumberSprintSummaryForGeneric
+  }
+}
+
+fragment TicketsMetricResponseForGeneric on TicketsMetricResponse {
+  summariesList {
+    ...NumberSummaryForGeneric
+  }
+}
+
+fragment TicketCommitHotspotsMetricResponseForGeneric on TicketCommitHotspotsMetricResponse {
+  singleLevelSummariesList {
+    hotspotType
+    key
+    label
+    value
+    path
+  }
+}
+
+fragment TicketsScopeMetricResponseForGeneric on TicketsScopeMetricResponse {
+  summariesList {
+    ...TicketsScopeNumberSummary
+  }
+}
+
+fragment TicketsTimelineMetricStatusResponseForGeneric on TicketsTimelineMetricStatusResponse {
+  summariesList {
+    ...NumberStatusSummaryForGeneric
+  }
+}
+
+fragment TicketsTimelineMetricStatusBucketResponseForGeneric on TicketsTimelineMetricStatusBucketResponse {
+  summariesList {
+    ...StatusBucketSummaryForGeneric
+  }
+}
+
+fragment TreemapResponseForGeneric on TreemapResponse {
+  treemapSeriesList {
+    key
+    label
+    totals {
+      key
+      label
+      value
+    }
+    data {
+      key
+      label
+      values {
+        key
+        label
+        value
+      }
+    }
+  }
+}
+
+fragment UnresolvedTicketsMetricResponseForGeneric on UnresolvedTicketsMetricResponse {
+  summariesList {
+    ...NumberSummaryForGeneric
+  }
+}

@@ -1,3 +1,11 @@
 {
-  "schema": "https://api.plandek.com/graphql"
+  "schema": "https://api.plandek.com/graphql",
+  "documents": "./graphql/**/*.graphql",
+  "extensions": {
+    "endpoints": {
+      "default": {
+        "url": "https://api.plandek.com/graphql/"
+      }
+    }
+  }
 }

@@ -1,0 +1,8 @@
+# It will return the list of query methods relevant for the given metric
+
+query ($metricKey: MetricKey!){
+  queryMethodsFor(metricKey: $metricKey) {
+    methodName
+    description
+  }
+}

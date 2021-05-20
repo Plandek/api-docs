@@ -1,0 +1,22 @@
+# Returns the list of sprints available for the given set of filters
+# `sprintDateRangeFieldOverride` determines which field to use as `dateRange.to`, either `rawEndDate` or `rawCompletedDate`
+query(
+  $filters: FiltersOnlyDataSetAndEntitiesInput!
+  $sprintDateRangeFieldOverride: SprintDateRangeField!
+) {
+  availableSprints(
+    filters: $filters
+    sprintDateRangeFieldOverride: $sprintDateRangeFieldOverride
+  ) {
+    sprintKey
+    sprintLabel
+    sprintDateRangeField
+    dateRange {
+      from
+      to
+    }
+    rawStartDate
+    rawEndDate
+    rawCompletedDate
+  }
+}

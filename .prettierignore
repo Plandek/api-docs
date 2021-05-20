@@ -1,0 +1,11 @@
+/**/__generated__/*
+/**/*.fixtures.json
+/**/*.fixture.json
+/**/tsconfig.json
+/**/package.json
+tsconfig.json
+package.json
+pipe-extensions.ts
+compose-extensions.ts
+src/ui-metrics/metrics-api/gmr-types.ts
+src/ui-metrics/metrics-api/metric-response-to-generic.ts
